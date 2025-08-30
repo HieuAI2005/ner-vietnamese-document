@@ -1,0 +1,31 @@
+Điều 3. Giải thích từ ngữ
+
+Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau:
+
+1. Gia tốc lực trọng trường là gia tốc do lực hấp dẫn của trái đất tác động
+lên một vật trên bề mặt trái đất, đơn vị đo là miliGal (mGal) tương ứng 105 m/42.
+
+2. Đo trọng lực tuyệt đối là phương pháp đo sử dụng phương tiện đo trọng
+lực tuyệt đối theo nguyên lý con lắc điện tử hoặc buồng rơi chân không để xác
+định gia tốc lực trọng trường tại một điểm bất kỳ trên bề mặt trái đất.
+3. Đo trọng lực tương đối là phương pháp đo sử dụng phương tiện đo trọng
+lực tương đối theo nguyên lý lò xo để xác định hiệu gia tốc lực trọng trường theo
+thời gian giữa hai điểm đo.
+
+4. Hiệu gia tốc lực frọng trưởng là chênh lệch giá trị gia tốc lực trọng trường
+giữa hai điểm đo.
+
+5. Đường đáy trọng lực là một tuyên các mốc trọng lực đã được xác định
+giá trị gia tốc lực trọng trường và hiệu gia tốc lực trọng trường giữa các mốc liền
+kể, phục vụ cho kiểm định và hiệu chuẩn các phương tiện đo trọng lực tương đối.
+
+6. Gradient đứng là tỷ lệ biễn thiên gia tốc lực trọng trường theo đơn vị
+chiều dài tính theo phương thắng đứng.
+
+Điều 4. Quy định chung về mạng lưới trọng lực quốc gia
+
+1. Trong mạng lưới trọng lực quốc gia, hệ thống các điểm trọng lực cơ sở
+được đo bằng phương pháp trọng lực tuyệt đối; mạng lưới các điểm trọng lực hạng
+I được đo băng phương pháp trọng lực tương đối hoặc phương pháp trọng lực
+tuyệt đối; mạng lưới điểm trọng lực hạng II được đo bằng phương pháp trọng lực
+tương đối.

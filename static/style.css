@@ -1,0 +1,81 @@
+body {
+  background-color: #f9f9ff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 38px;
+}
+
+.upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 30px;
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.upload-box:hover {
+  border-color: #3366ff;
+}
+
+.upload-icon {
+  font-size: 70px;
+  color: #3366ff;
+  margin-bottom: 25px;
+}
+
+.btn-upload {
+  background-color: #3366ff;
+  color: white;
+  font-size: 20px;
+  padding: 14px 36px;
+  border-radius: 10px;
+}
+
+.btn-upload:hover {
+  background-color: #254eda;
+}
+
+.btn-choose {
+  background-color: transparent;
+  color: #3366ff;
+  border: 2px solid #3366ff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.footer {
+  font-size: 18px;
+  color: #666;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text img {
+  width: 36px;
+  margin-right: 14px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+input:disabled {
+  background-color: #f9f9f9;
+}
+
+.valid-url {
+  border-color: #198754 !important; /* xanh Bootstrap */
+  box-shadow: 0 0 0 0.15rem rgba(25, 135, 84, 0.25);
+}

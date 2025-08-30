@@ -1,0 +1,23 @@
+Điều 6. Định dạng sản phẩm
+
+Bản đồ địa hình quốc gia tỷ lệ 1:10.000, 1:25.000 gồm bản đồ địa hình
+quôc gia dạng sô và bản đô địa hình quôc gia In trên giây. Bản đô địa hình quôc
+gia dạng sô ở định dạng Geo TIFF và GeoPDF kèm theo tệp siêu dữ liệu.
+
+Chương II
+NỘI DUNG VÀ KÝ HIỆU
+Điều 7. Nội dung bản đồ địa hình quốc gia tỷ lệ 1:10.000, 1:25.000
+
+1. Bản đồ địa hình quốc gia tỷ lệ 1:10.000 và 1:25.000 được thành lập từ
+cơ sở dữ liệu nên địa lý quôc gia, bao gôm các nhóm lớp dữ liệu sau:
+
+a) Nhóm lớp cơ sở toán học;
+
+b) Nhóm lớp dữ liệu biên giới quốc gia, địa giới hành chính;
+c) Nhóm lớp dữ liệu dân cư;
+
+đ) Nhóm lớp dữ liệu địa hình;
+
+đ) Nhóm lớp dữ liệu giao thông;
+
+e) Nhóm lớp dữ liệu phủ thực vật;

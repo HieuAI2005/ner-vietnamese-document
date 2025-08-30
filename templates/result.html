@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trích xuất dữ liệu từ PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8f9ff;
+    }
+    .tab-pane pre {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .card-style {
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .download-btn {
+      font-size: 1.1rem;
+      padding: 0.75rem 1.5rem;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-5">
+  <h2 class="mb-3 fw-bold">Trích xuất dữ liệu từ PDF</h2>
+  <p class="text-muted">Hệ thống sử dụng AI để phân tích văn bản hành chính và trích xuất thông tin dưới dạng cấu trúc JSON. Chỉ cần tải lên tệp PDF và nhấn "Phân tích".</p>
+
+  <div class="alert alert-success mt-4">✅ Phân tích hoàn tất! Dưới đây là kết quả trích xuất.</div>
+
+  <!-- Tab lựa chọn -->
+  <ul class="nav nav-tabs mb-4" id="viewTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="view-tab" data-bs-toggle="tab" data-bs-target="#view" type="button" role="tab">👁️ Xem trước</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="json-tab" data-bs-toggle="tab" data-bs-target="#json" type="button" role="tab">🗂 JSON</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="viewTabsContent">
+    <!-- Thẻ Xem trước -->
+    <div class="tab-pane fade show active" id="view" role="tabpanel">
+      <div class="row g-4">
+        <!-- Thông tin trích xuất -->
+        <div class="col-md-6">
+          <h5 class="section-title">Thông tin trích xuất {% if field_count %}({{ field_count }} trường){% endif %}</h5>
+          <div class="card-style">
+            {% if json_result %}
+              {% set data = json_result | from_json %}
+              <ul class="list-unstyled">
+                {% for key, value in data.items() %}
+                  <li class="mb-2">
+                    <strong>{{ key | replace('_', ' ') | title }}:</strong>
+                    {% if value is string %}
+                      {{ value }}
+                    {% elif value is sequence %}
+                      <ul class="mb-0">
+                        {% for item in value %}
+                          <li>{{ item }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% else %}
+                      {{ value }}
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>Không có dữ liệu JSON.</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Xem trước văn bản -->
+        <div class="col-md-6">
+          <h5 class="section-title">Xem trước văn bản</h5>
+          <div class="card-style" style="white-space: pre-wrap">{{ raw_text }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thẻ JSON -->
+    <div class="tab-pane fade" id="json" role="tabpanel">
+      <div class="card-style">
+        <pre>{{ json_result | safe }}</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nút thao tác -->
+  <div class="mt-4 d-flex gap-3">
+    <a href="{{ url_for('static', filename=download_link) }}" class="btn btn-success download-btn" download>
+      <i class="fa-solid fa-download"></i> Tải file JSON
+    </a>
+    <a href="{{ url_for('index') }}" class="btn btn-outline-primary download-btn">
+      🔄 Phân tích file khác
+    </a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

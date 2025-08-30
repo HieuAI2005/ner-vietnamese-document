@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đang xử lý...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background-color: #f8f9ff;
+    }
+    .step-list .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+    .completed {
+      color: green;
+    }
+    .spinner-border-sm {
+      width: 1rem;
+      height: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5 text-center">
+    <div class="logo-text mb-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="icon" style="width:40px; height:40px;" />
+      <span class="h4 ms-2">PDF to JSON</span>
+    </div>
+
+    <h2 class="fw-bold">Trích xuất dữ liệu từ PDF</h2>
+    <p class="text-muted">Hệ thống đang xử lý và trích xuất thông tin từ văn bản PDF của bạn...</p>
+
+    <div class="mt-5">
+      <div class="spinner-border text-primary mb-3" role="status"></div>
+      <p class="text-primary fw-semibold">Đang phân tích dữ liệu...</p>
+
+      <div class="list-group step-list mt-4 text-start mx-auto" style="max-width: 450px;">
+        <div class="list-group-item" id="step-1">
+          <span>① Đọc nội dung PDF</span> <span class="status spinner-border spinner-border-sm text-secondary" role="status"></span>
+        </div>
+        <div class="list-group-item" id="step-2">
+          <span>② Phân tích văn bản</span> <span class="status">⏳</span>
+        </div>
+        <div class="list-group-item" id="step-3">
+          <span>③ Trích xuất thông tin</span> <span class="status">⏳</span>
+        </div>
+        <div class="list-group-item" id="step-4">
+          <span>④ Tạo file JSON</span> <span class="status">⏳</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const steps = [
+      { id: "step-1", delay: 800 },
+      { id: "step-2", delay: 1000 },
+      { id: "step-3", delay: 1000 },
+      { id: "step-4", delay: 800 }
+    ];
+
+    let totalVisualDelay = 0;
+
+    steps.forEach((step, index) => {
+      totalVisualDelay += step.delay;
+      setTimeout(() => {
+        const row = document.getElementById(step.id);
+        if (row) {
+          const icon = row.querySelector(".status");
+          icon.innerHTML = "✔";
+          icon.classList.remove("spinner-border", "spinner-border-sm", "text-secondary");
+          icon.classList.add("completed");
+        }
+        const next = steps[index + 1];
+        if (next) {
+          const nextRow = document.getElementById(next.id);
+          if (nextRow) {
+            const icon = nextRow.querySelector(".status");
+            icon.classList.add("spinner-border", "spinner-border-sm", "text-secondary");
+            icon.innerHTML = "";
+          }
+        }
+      }, totalVisualDelay);
+    });
+
+    fetch("/process")
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "done") {
+        const filename = data.json_file;
+        setTimeout(() => {
+          window.location.href = `/result?file=${filename}`;
+        }, 3000);
+      } else {
+        alert("❌ Có lỗi xảy ra khi xử lý file!");
+      }
+    })
+
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
