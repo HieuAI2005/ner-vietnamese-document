@@ -21,6 +21,7 @@
 ## Mục lục
 
 * [Tổng quan](#tổng-quan)
+* [Ảnh giao diện Web](#ảnh-giao-diện-web)
 * [Tính năng](#tính-năng)
 * [Cấu trúc dự án](#cấu-trúc-dự-án)
 
@@ -44,6 +45,18 @@
 `PDF → OCR/tiền xử lý → NER → hậu xử lý → JSON/HTML`. Ứng dụng cung cấp giao diện web nhỏ gọn bằng **Flask** để tải lên tệp và xem kết quả.
 
 > ⚠️ Lưu ý: thư mục `ner_model_best/` chứa trọng số lớn. Hãy **không commit** tệp nặng lên GitHub. Khuyến nghị dùng Git LFS hoặc phát hành qua link ngoài (Drive, HuggingFace Hub). Cập nhật đường dẫn model trong code cho phù hợp.
+
+---
+
+## Ảnh giao diện Web
+
+<p align="center">
+  <img src="screenshot_ui.png" alt="Giao diện Web" width="700">
+</p>
+
+<p align="center">
+  <img src="screenshot_result.png" alt="Kết quả trích xuất" width="700">
+</p>
 
 ---
 
@@ -91,7 +104,9 @@ KeyValExtrator/
 │   └── result.html
 ├── test.ipynb
 └── assets/
-    └── logo.svg            
+    ├── logo.svg
+    ├── screenshot_ui.png
+    └── screenshot_result.png
 ```
 
 > Các đường dẫn trong README sử dụng **đường dẫn tương đối** để tương thích cả khi chạy cục bộ lẫn khi đẩy lên GitHub.
@@ -153,20 +168,5 @@ pytest -q
 * [ ] Bảng `table` robust hơn cho nhiều template hóa đơn.
 * [ ] Đóng gói Docker + cấu hình hiệu năng.
 * [ ] Tài liệu hoá API (REST) để tích hợp hệ thống khác.
-
----
-
-## Đóng góp
-
-1. Fork repository và tạo nhánh mới:
-
-   ```bash
-   git checkout -b feature/my-change
-   ```
-2. Commit có mô tả rõ ràng và mở Pull Request.
-3. Hãy đính kèm mẫu PDF và JSON kỳ vọng khi thay đổi pipeline.
-
-* **Báo lỗi**: mở issue tại tab *Issues*.
-* **Thảo luận**: dùng *Discussions* để hỏi/đề xuất.
 
 ---
