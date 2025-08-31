@@ -44,8 +44,6 @@
 **KeyValExtrator** là ứng dụng demo trích xuất các cặp *Key–Value* từ tài liệu PDF (đặc biệt hoá đơn) bằng pipeline:
 `PDF → OCR/tiền xử lý → NER → hậu xử lý → JSON/HTML`. Ứng dụng cung cấp giao diện web nhỏ gọn bằng **Flask** để tải lên tệp và xem kết quả.
 
-> ⚠️ Lưu ý: thư mục `ner_model_best/` chứa trọng số lớn. Hãy **không commit** tệp nặng lên GitHub. Khuyến nghị dùng Git LFS hoặc phát hành qua link ngoài (Drive, HuggingFace Hub). Cập nhật đường dẫn model trong code cho phù hợp.
-
 ---
 
 ## Ảnh giao diện Web
