@@ -66,7 +66,7 @@
 
 ## Tính năng
 
-* Trích xuất trường phổ biến: `invoice_number`, `invoice_date`, `total`, `table` (mục hàng), `business_unit`, v.v.
+* Trích xuất trường phổ biến: `POSITION (Chức vụ)`, `REFERENCE (căn cứ)`, `ISSUING_AGENCY (cơ quan ban hành)`, v.v.
 * Hỗ trợ PDF dạng text và ảnh (với OCR tuỳ chọn).
 * Web UI đơn giản: tải file, theo dõi trạng thái xử lý, xem JSON kết quả.
 * Mã nguồn thuần Python, dễ tuỳ biến pipeline (tiền xử lý/hậu xử lý/NER).
