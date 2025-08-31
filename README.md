@@ -8,7 +8,7 @@
 
 # KeyValExtrator
 
-*trích xuất khóa–giá trị (Key–Value) từ PDF/Hóa đơn với Python + spaCy + Flask*
+*Trích xuất khóa–giá trị (Key–Value) từ PDF/Hóa đơn với Python + spaCy + Flask*
 
 <!-- Badges -->
 
