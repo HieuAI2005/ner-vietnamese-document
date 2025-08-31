@@ -51,11 +51,15 @@
 ## Ảnh giao diện Web
 
 <p align="center">
-  <img src="screenshot_ui.png" alt="Giao diện Web" width="700">
+  <img src="ui.png" alt="Giao diện Web" width="700">
 </p>
 
 <p align="center">
-  <img src="screenshot_result.png" alt="Kết quả trích xuất" width="700">
+  <img src="process.png" alt="Quá trình xử lí" width="700">
+</p>
+
+<p align="center">
+  <img src="result.png" alt="Kết quả trích xuất" width="700">
 </p>
 
 ---
