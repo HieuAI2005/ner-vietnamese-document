@@ -4,7 +4,7 @@
 
 <!-- Logo (CC0) -->
 
-<img src="assets/logo.png" width="160" alt="KeyValExtrator Logo" />
+<img src="logo.png" width="160" alt="KeyValExtrator Logo" />
 
 # KeyValExtrator
 
